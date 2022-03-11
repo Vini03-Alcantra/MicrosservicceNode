@@ -1,0 +1,5 @@
+class ReadClientUseCase {
+
+}
+
+export {ReadClientUseCase}

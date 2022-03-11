@@ -2,11 +2,11 @@ import {Client} from "@prisma/client";
 import {ICreateClientDTO} from "../dto/ICreateClientDTO";
 
 interface IClientRepository {
-    create(data: IClientRepository): Promise<void>;
+    create(data: ICreateClientDTO): Promise<void>;
     find(): Promise<Client[]>;
-    findID({uuid: string}): Promise<Client | null>;
-    delete({uuid: string}): Promise<void>;
-    update(uuid: string, data: IClientRepository): Promise<void>;
+    findID(uuid: string): Promise<Client | null>;
+    delete(uuid: string): Promise<void>;
+    update(uuid: string, data: ICreateClientDTO): Promise<void>;
 }
 
 export {IClientRepository}

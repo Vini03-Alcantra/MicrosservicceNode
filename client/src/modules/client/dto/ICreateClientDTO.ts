@@ -1,9 +1,8 @@
-interface ICreateClientDTO {
-    id: String;
-    name: String;
-    cpf: String;
-    email: String;
-    phoneNumber: String;
+interface ICreateClientDTO {    
+    name: string;
+    cpf: string;
+    email: string;
+    phoneNumber: string;
 }
 
 export {ICreateClientDTO}

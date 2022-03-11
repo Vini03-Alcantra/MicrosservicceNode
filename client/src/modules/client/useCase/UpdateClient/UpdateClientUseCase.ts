@@ -1,0 +1,5 @@
+class UpdateClientUseCase {
+
+}
+
+export {UpdateClientUseCase}

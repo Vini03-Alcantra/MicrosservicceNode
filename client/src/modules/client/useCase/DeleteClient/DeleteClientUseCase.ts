@@ -1,0 +1,5 @@
+class DeleteClientUseCase {
+
+}
+
+export {DeleteClientUseCase}

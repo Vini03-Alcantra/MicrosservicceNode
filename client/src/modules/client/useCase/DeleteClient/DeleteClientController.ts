@@ -1,0 +1,5 @@
+class DeleteClientController {
+
+}
+
+export {DeleteClientController}
