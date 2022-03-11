@@ -52,8 +52,26 @@ class ClientRepository implements IClientRepository {
         }
     }
 
-    update(uuid: string, data: ICreateClientDTO): Promise<void> {
-        throw new Error("Method not implemented.");
+    async update(uuid: string, {
+        name,
+        cpf,
+        email,
+        phoneNumber
+    }: ICreateClientDTO): Promise<void> {
+        try {
+            await prisma.client.update({
+                where: {id: uuid},
+                data: {
+                    name,
+                    cpf,
+                    email,
+                    phoneNumber
+                }
+            })
+        } catch (err) {
+            console.error(err);
+            throw new Error(err)    
+        }
     }
 
 }
