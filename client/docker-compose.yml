@@ -1,0 +1,12 @@
+version: "4"
+
+services:
+  client_db:
+    image: postgres
+    container_name: client_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: client
+    ports: 
+      - 5429:5432
