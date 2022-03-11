@@ -11,7 +11,7 @@ class ReadClienbtController {
 
             return res.status(201).json(clients)
         } catch (error) {
-            return res.status(400).json({"msg": "Não foi possível locvalizar os clients"})
+            return res.status(400).json({"msg": "Não foi possível localizar os clients"})
         }
     }
 }

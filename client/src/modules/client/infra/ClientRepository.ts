@@ -22,7 +22,7 @@ class ClientRepository implements IClientRepository {
             })
         } catch (err) {
             console.error(err)
-            throw new Error(err)
+            throw new Error("Erro na requisição")
         }    
     }
 
@@ -31,12 +31,16 @@ class ClientRepository implements IClientRepository {
         return clients    
     }
 
-    async findID( uuid: string ): Promise<Client> {
+    async findID( uuid: string ): Promise<Client | null> {
         const client = await prisma.client.findFirst({
             where: {
                 id: uuid
             }
         })
+
+        if(!client){
+            return null
+        }
 
         return client
     }
@@ -48,7 +52,7 @@ class ClientRepository implements IClientRepository {
             })
         } catch (err) {
             console.error(err);
-            throw new Error(err)
+            throw new Error("Erro na requisição")
         }
     }
 
@@ -70,7 +74,7 @@ class ClientRepository implements IClientRepository {
             })
         } catch (err) {
             console.error(err);
-            throw new Error(err)    
+            throw new Error("Erro na requisição")
         }
     }
 
