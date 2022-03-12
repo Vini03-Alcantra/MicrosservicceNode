@@ -12,7 +12,7 @@ class ClientRepository implements IClientRepository {
         phoneNumber
     }: ICreateClientDTO): Promise<void> {
         try {
-            const result = await prisma.client.create({
+            await prisma.client.create({
                 data: {
                     name, 
                     email, 
