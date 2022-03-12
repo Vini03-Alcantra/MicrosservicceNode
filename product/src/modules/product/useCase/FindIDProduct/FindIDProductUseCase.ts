@@ -1,0 +1,5 @@
+class FindIDProductUseCase {
+
+}
+
+export {FindIDProductUseCase}
