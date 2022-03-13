@@ -10,3 +10,20 @@ services:
       POSTGRES_DB: client
     ports: 
       - 5429:5432
+
+  client:
+    build: .
+    container_name: client
+    ports: 
+      - "3009:3009"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: client
+    links:
+      - client_db
+    depends_on:
+      - client_db
+
+volumes:
+  db_data: {}

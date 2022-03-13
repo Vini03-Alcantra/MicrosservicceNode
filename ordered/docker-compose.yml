@@ -1,0 +1,12 @@
+version: "4"
+
+services: 
+  ordered_db:
+    image: postgres
+    container_name: ordered_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: ordered_db
+    ports: 
+      - 5427:5432

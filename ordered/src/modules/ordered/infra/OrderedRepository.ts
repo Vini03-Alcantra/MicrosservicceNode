@@ -6,13 +6,13 @@ const prisma = new PrismaClient();
 
 class OrderedRepository implements IOrderedRepository {
     async create({
-        cliendID,
+        clientID,
         productID
     }: ICreateOrderedDTO): Promise<void> {
         try {
             await prisma.ordered.create({
                 data: {
-                    clientID: cliendID,
+                    clientID,
                     productID
                 }
             })

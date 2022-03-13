@@ -1,5 +1,5 @@
 interface ICreateOrderedDTO {
-    cliendID: string;
+    clientID: string;
     productID: string;    
 }
 

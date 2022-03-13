@@ -1,0 +1,12 @@
+version: "4"
+
+services:
+  product_db:
+    image: postgres
+    container_name: product_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: product
+    ports: 
+      - 5428:5432

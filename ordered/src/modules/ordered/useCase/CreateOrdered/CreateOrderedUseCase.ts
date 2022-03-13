@@ -5,10 +5,10 @@ class CreateOrderedUseCase {
     orderedRepository = new OrderedRepository();
 
     async execute({
-        cliendID,
+        clientID,
         productID
     }: ICreateOrderedDTO) {
-        await this.orderedRepository.create({cliendID, productID})
+        await this.orderedRepository.create({clientID, productID})
     }
 }
 

@@ -1,10 +1,14 @@
 import { Request, Response } from "express";
-import {} from "./ReadIDOrderedUseCase"
+import {ReadIDOrderedUseCase} from "./ReadIDOrderedUseCase"
 
 class ReadIDOrderedController {
     async handle(req: Request, res: Response) {
         try {
-            return res.status(200).json()
+            const {id} = req.body;
+            const readIDOrderedUseCase = new ReadIDOrderedUseCase()
+            const ordered = await readIDOrderedUseCase.execute(id)            
+
+            return res.status(200).json(ordered)
         } catch (error) {
             return res.status(400).json({"msg": ""})
         }
