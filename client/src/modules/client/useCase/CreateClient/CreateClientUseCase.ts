@@ -1,4 +1,4 @@
-import {ClientRepository} from "../../infra/ClientRepository"
+import {ClientRepository} from "../../infra/ClientRepository";
 import {ICreateClientDTO} from "../../dto/ICreateClientDTO"
 
 class CreateClientUseCase {
