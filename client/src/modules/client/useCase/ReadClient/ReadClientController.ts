@@ -2,12 +2,11 @@ import { Request, Response } from "express"
 import {ReadClientUseCase} from "./ReadClientUseCase"
 
 
-class ReadClienbtController {
-    readClientUseCase = new ReadClientUseCase();
-
+class ReadClienbtController {    
     async handle(req: Request, res: Response): Promise<Response> {
+        const readClientUseCase = new ReadClientUseCase();
         try {
-            const clients = await this.readClientUseCase.execute();
+            const clients = await readClientUseCase.execute();
 
             return res.status(201).json(clients)
         } catch (error) {

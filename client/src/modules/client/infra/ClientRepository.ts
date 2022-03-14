@@ -10,9 +10,9 @@ class ClientRepository implements IClientRepository {
         cpf,
         email,
         phoneNumber
-    }: ICreateClientDTO): Promise<void> {
+    }: ICreateClientDTO): Promise<Client> {
         try {
-            await prisma.client.create({
+            const client = await prisma.client.create({
                 data: {
                     name, 
                     email, 
@@ -20,6 +20,8 @@ class ClientRepository implements IClientRepository {
                     phoneNumber
                 }
             })
+
+            return client
         } catch (err) {
             console.error(err)
             throw new Error("Erro na requisição")

@@ -10,7 +10,8 @@ class CreateClientUseCase {
         email,
         phoneNumber
     }: ICreateClientDTO) {
-        await this.clientRepository.create({name, cpf, email, phoneNumber})
+        const client = await this.clientRepository.create({name, cpf, email, phoneNumber})
+        return client
     }
 }
 
