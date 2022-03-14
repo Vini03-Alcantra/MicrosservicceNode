@@ -9,7 +9,8 @@ class CreateProductUseCase {
         description,
         prize
     }: ICreateProductDTO){
-        await this.productRepository.create({name, description, prize})        
+        const productCreated = await this.productRepository.create({name, description, prize})        
+        return productCreated
     }
 }
 

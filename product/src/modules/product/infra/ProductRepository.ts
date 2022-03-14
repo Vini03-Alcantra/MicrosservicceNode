@@ -9,15 +9,17 @@ class ProductRepository implements IProductRepository {
         name,
         description,
         prize
-    }: ICreateProductDTO): Promise<void> {
+    }: ICreateProductDTO): Promise<Product> {
         try {
-            await prisma.product.create({
+            const product = await prisma.product.create({
                 data: {
                     name,
                     description,
                     prize
                 }
             })
+
+            return product
         } catch (err) {
             console.error(err)
             throw new Error("Erro na requisição")
