@@ -8,7 +8,8 @@ class CreateOrderedUseCase {
         clientID,
         productID
     }: ICreateOrderedDTO) {
-        await this.orderedRepository.create({clientID, productID})
+        const orderedCreated = await this.orderedRepository.create({clientID, productID})
+        return orderedCreated
     }
 }
 

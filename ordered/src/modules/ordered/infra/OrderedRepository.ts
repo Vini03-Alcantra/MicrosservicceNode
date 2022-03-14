@@ -8,14 +8,16 @@ class OrderedRepository implements IOrderedRepository {
     async create({
         clientID,
         productID
-    }: ICreateOrderedDTO): Promise<void> {
+    }: ICreateOrderedDTO): Promise<Ordered> {
         try {
-            await prisma.ordered.create({
+            const ordered = await prisma.ordered.create({
                 data: {
                     clientID,
                     productID
                 }
             })
+
+            return ordered
         } catch (err) {
             console.error(err)
             throw new Error("Erro na requisição")
