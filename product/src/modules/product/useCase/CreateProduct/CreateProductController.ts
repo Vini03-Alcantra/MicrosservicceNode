@@ -1,12 +1,11 @@
 import {Request, Response} from "express"
 import {CreateProductUseCase} from "./CreateProductUseCase"
-class CreateProductController {
-    createProductUseCase = new CreateProductUseCase()
+class CreateProductController {    
     async handle(req: Request, res: Response){
         const {name, description, prize} = req.body;
-
+        const createProductUseCase = new CreateProductUseCase()
         try {
-            await this.createProductUseCase.execute({name, description, prize})
+            await createProductUseCase.execute({name, description, prize})
             return res.status(200).json({"msg": "Producto cadastrado com sucesso"})
         } catch (err) {
             console.error(err)
